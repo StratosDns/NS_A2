@@ -1,0 +1,11 @@
+{
+  "name": "webrtc-registration-hijack-attacker",
+  "version": "1.0.0",
+  "description": "Python-based WebSocket registration hijacking attack for the NS signaling server assignment.",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "attack": "python attacker.py --victim-id client-a"
+  },
+  "dependencies": {}
+}

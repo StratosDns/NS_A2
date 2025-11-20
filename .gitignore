@@ -1,0 +1,72 @@
+# -------------------------
+# Python cache & artifacts
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments (global for repo)
+.venv/
+venv/
+env/
+ENV/
+*.env
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# -------------------------
+# Node / JavaScript
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build artifacts (if you ever bundle anything)
+dist/
+build/
+.cache/
+
+# -------------------------
+# Logs & runtime artifacts
+# -------------------------
+#*.log
+*.tmp
+*.pid
+
+# Project-specific logs
+#ws-proxy/proxy.log
+
+# -------------------------
+# Captures / PCAPs / Dumps
+# -------------------------
+*.pcap
+*.pcapng
+captures/
+pcaps/
+dumps/
+
+# -------------------------
+# OS / Editor junk
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# IntelliJ / PyCharm / WebStorm / etc.
+.idea/
+*.iml
+
+# -------------------------
+# Misc
+# -------------------------
+*.bak
+*~

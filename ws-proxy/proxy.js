@@ -1,6 +1,6 @@
 // proxy.js
 const fs = require('fs');
-const logStream = fs.createWriteStream('proxy.log', { flags: 'a' });
+const logStream = fs.createWriteStream('proxy_2_2.log', { flags: 'a' });
 
 function logline(...args) {
   const line = args.join(' ');

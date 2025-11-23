@@ -155,3 +155,4 @@
   "to": "client-a",
   "type": "ice"
 }
+[2025-11-21T11:28:16Z] [!] Attack task cancelled, exiting run_attack().

@@ -1,0 +1,49 @@
+services:
+  signaling:
+    build:
+      context: .
+      dockerfile: docker/signaling/Dockerfile
+    environment:
+      - SERVER_MODE=insecure
+      - VALID_TOKEN=labtoken123
+    ports:
+      - "8080:8080" # Make sure this maps to localhost:8080
+      - "8443:8443"
+    volumes:
+      - ./docker/ssl:/certs:ro
+    networks:
+      - labnet
+
+  client-a:
+    build:
+      context: .
+      dockerfile: docker/client/Dockerfile
+    environment:
+      - NAME=client-a
+      - SIGNALING_URL=ws://signaling:8080 # Internal Docker network URL
+      - ROLE=caller
+    ports:
+      - "3001:3000"
+    depends_on:
+      - signaling
+    networks:
+      - labnet
+
+  client-b:
+    build:
+      context: .
+      dockerfile: docker/client/Dockerfile
+    environment:
+      - NAME=client-b
+      - SIGNALING_URL=ws://signaling:8080 # Internal Docker network URL
+      - ROLE=callee
+    ports:
+      - "3002:3000"
+    depends_on:
+      - signaling
+    networks:
+      - labnet
+
+networks:
+  labnet:
+    driver: bridge

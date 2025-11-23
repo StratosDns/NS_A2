@@ -6,7 +6,8 @@ This repository contains the full implementation of the **Assignment 2 Bonus Tas
 Inside the signaling server directory:
 
 ```bash
-cd docker/signaling/ssl
+cd docker/signaling
+nano ssl
 
 openssl req -x509 -newkey rsa:2048 -nodes \
   -keyout key.pem -out cert.pem -days 365 \
